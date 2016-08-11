@@ -18,12 +18,7 @@ pigeon_data = {
     "City Hall" => ["Andrew"]
   }
 }
-# pigeon_list = {
-#   "Theo" => {
-#     :color => ["purple", "grey"],
-#     :gender => ["male"],
-#     :lives => ["Subway"]
-#   }
+
 def get_uniq_names(hash)
   uniq_names = []
   hash.each do |att, info_hash|
@@ -33,9 +28,7 @@ def get_uniq_names(hash)
       end
     end
   end
-uniq_names.uniq 
-# binding.pry
-
+  uniq_names.uniq 
 end
 
 def build_hash(list_names, data)
@@ -53,15 +46,12 @@ def fill_arrays(hash, data)
   data.each do |attr_key, attr_hash|
     attr_hash.each do |key, names|
       names.each do |name|
-        hash[name][attr_key] << key
+        hash[name][attr_key] << key.to_s
       end
     end
   end
 hash
   end
-
-
-
 
 def organize_pigeons(pigeon_data)
   names = get_uniq_names(pigeon_data)
